@@ -1,0 +1,25 @@
+<TooltipMDIconButton@MDIconButton+MDTooltip>
+<FriendScreen>:
+
+#:import Window kivy.core.window.Window
+
+    BoxLayout:
+        orientation:'vertical'
+
+        ScrollView:
+
+            do_scroll_x: False
+            height: Window.height
+            MDList:
+                id: container
+
+
+    TooltipMDIconButton:
+        tooltip_text:"Back"
+        icon: 'arrow-left'
+        on_release:
+            root.go_back()
+
+        pos_hint:{'center_x':0.9,'center_y':0.05}
+
+

@@ -1,0 +1,273 @@
+<TooltipMDIconButton@MDIconButton+MDTooltip>
+<OngkirScreen>:
+
+    MDToolbar:
+
+        md_bg_color:0,0,0,0
+        elevation:0
+        pos_hint: {"top": 1}
+
+
+        left_action_items: [['chevron-left', lambda x: root.go_back()]]
+
+        specific_text_color: hex('#000000')
+    MDCard:
+        pos_hint:{'center_x':0.22,'center_y':0.9}
+        size_hint:0.4,0.05
+        elevation:0
+
+
+        MDLabel:
+            text:"Provinsi:"
+            halign:'left'
+            font_style:'Button'
+
+
+
+    Spinner:
+
+        id: province
+
+        width:500
+        height:50
+        size_hint_x:None
+        size_hint_y:None
+        pos_hint:{'center_x': 0.65,'center_y':0.9}
+        text:"Provinsi Asal"
+        on_text:root.parent.parent.show_kota1(province.text)
+
+    MDCard:
+        pos_hint:{'center_x':0.22,'center_y':0.8}
+        size_hint:0.4,0.1
+        elevation:0
+
+
+        MDLabel:
+            text:"Kota Asal:"
+            halign:'left'
+            font_style:'Button'
+
+    MyTextInput:
+
+        icon_right:'highway'
+        id: search_provinsi
+
+
+        width:500
+        size_hint_x:None
+
+        pos_hint:{'center_x': 0.65,'center_y':0.85}
+
+
+
+    TooltipMDIconButton:
+        tooltip_text:'Cari Provinsi'
+        icon: 'database-search'
+        on_release:
+            root.parent.parent.change_spinn()
+
+        pos_hint: {'center_x': 0.15,'center_y':0.85}
+
+
+    Spinner:
+
+        id: kota
+
+        width:500
+        height:50
+        size_hint_x:None
+        size_hint_y:None
+        pos_hint:{'center_x': 0.65,'center_y':0.8}
+        text:"Kota Asal"
+
+
+
+
+    MDCard:
+        pos_hint:{'center_x':0.22,'center_y':0.7}
+        size_hint:0.4,0.1
+        elevation:0
+
+
+        MDLabel:
+            text:"Provinsi:"
+            halign:'left'
+            font_style:'Button'
+#    MDTextField:
+#
+#        icon_right:'highway'
+#        id: search_kota
+#
+#
+#        width:500
+#        size_hint_x:None
+#
+#        pos_hint:{'center_x': 0.6,'center_y':0.75}
+#
+#
+#        helper_text_mode: "on_focus"
+#
+#
+#    TooltipMDIconButton:
+#        tooltip_text:'Cari Kota'
+#        icon: 'database-search'
+#        on_release:
+#            root.parent.parent.change_kota()
+#
+#        pos_hint: {'center_x': 0.15,'center_y':0.75}
+#
+#
+
+    Spinner:
+
+        id: province_tujuan
+
+        width:500
+        height:50
+        size_hint_x:None
+        size_hint_y:None
+        pos_hint:{'center_x': 0.65,'center_y':0.7}
+        text:"Provinsi Tujuan"
+        on_text:root.parent.parent.show_kota(province_tujuan.text)
+    MDCard:
+        pos_hint:{'center_x':0.22,'center_y':0.6}
+        size_hint:0.4,0.1
+        elevation:0
+
+
+        MDLabel:
+            text:"Kota Tujuan:"
+            halign:'left'
+            font_style:'Button'
+    TooltipMDIconButton:
+        tooltip_text:'Cari Provinsi Tujuan'
+        icon: 'database-search'
+        on_release:
+            root.parent.parent.change_spinn1()
+
+        pos_hint: {'center_x': 0.15,'center_y':0.65}
+
+    MyTextInput:
+
+        icon_right:'highway'
+        id: search_provinsi_tujuan
+
+
+        width:500
+        size_hint_x:None
+
+        pos_hint:{'center_x': 0.65,'center_y':0.65}
+
+
+        helper_text_mode: "on_focus"
+    Spinner:
+
+        id: kota_tujuan
+
+        width:500
+        height:50
+        size_hint_x:None
+        size_hint_y:None
+        pos_hint:{'center_x': 0.65,'center_y':0.6}
+        text:"Kota Tujuan"
+    MDCard:
+        pos_hint:{'center_x':0.22,'center_y':0.5}
+        size_hint:0.4,0.1
+        elevation:0
+
+
+        MDLabel:
+            text:"Kurir:"
+            halign:'left'
+            font_style:'Button'
+#    TooltipMDIconButton:
+#        tooltip_text:'Cari Kota Tujuan'
+#        icon: 'database-search'
+#        on_release:
+#            root.parent.parent.change_kota_tujuan()
+#
+#        pos_hint: {'center_x': 0.15,'center_y':0.55}
+
+#    MDTextField:
+#
+#        icon_right:'highway'
+#        id: search_kota_tujuan
+#
+#
+#        width:500
+#        size_hint_x:None
+#
+#        pos_hint:{'center_x': 0.6,'center_y':0.55}
+#
+#
+#        helper_text_mode: "on_focus"
+    Spinner:
+
+        id: kurir
+
+        width:500
+        height:50
+        size_hint_x:None
+        size_hint_y:None
+        pos_hint:{'center_x': 0.65,'center_y':0.5}
+        text:"Kurir"
+        values:'JNE','TIKI','POS'
+
+
+    MDCard:
+        pos_hint:{'center_x':0.22,'center_y':0.4}
+        size_hint:0.4,0.1
+        elevation:0
+
+
+        MDLabel:
+            text:"Berat(Gram):"
+            halign:'left'
+            font_style:'Button'
+    MDTextField:
+
+        icon_right:'weight-gram'
+        id: weight
+        required: True
+        helper_text: "*Required"
+        helper_text_mode: "on_error"
+        width:500
+        size_hint_x:None
+
+        pos_hint:{'center_x': 0.65,'center_y':0.4}
+
+        helper_text_mode: "on_focus"
+
+    TooltipMDIconButton:
+        tooltip_text:'Count'
+        icon: 'plus'
+        on_release:
+            root.parent.parent.hitung()
+
+        pos_hint: {'center_x': 0.5,'center_y':0.3}
+
+    MDCard:
+        pos_hint:{'center_x':0.3,'center_y':0.2}
+        size_hint:0.4,0.1
+        elevation:0
+
+        MDLabel:
+            id:label
+            text:""
+            font_style:'Button'
+            halign:'center'
+    MDCard:
+        pos_hint:{'center_x':0.8,'center_y':0.2}
+        size_hint:0.4,0.1
+        elevation:0
+
+        Image:
+
+            id:image
+            ii:''
+            source:self.ii
+
+
+
+
+

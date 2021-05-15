@@ -1,0 +1,16 @@
+<TooltipMDIconButton@MDIconButton+MDTooltip>
+<CameraScreen>:
+    #:import XCamera xcamera.XCamera
+    XCamera:
+
+        id: xcamera
+
+        on_picture_taken: app.picture_taken(*args)
+
+    TooltipMDIconButton:
+        tooltip_text:'Back'
+        icon: 'arrow-left'
+        on_release:
+            root.parent.parent.change_screen('screen1')
+
+        pos_hint: {'center_x': 0.1,'center_y':0.05}

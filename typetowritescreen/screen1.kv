@@ -1,0 +1,157 @@
+#:import rgba kivy.utils.get_color_from_hex
+<Screen1>:
+
+    username: username
+
+    kelas:kelas
+    isi:isi
+    spinn:spinn
+    spinn1:spinn1
+
+    #:import hex kivy.utils.get_color_from_hex
+    ii :'1.png'
+    MDToolbar:
+
+        md_bg_color:0,0,0,0
+        elevation:0
+        pos_hint: {"top": 1}
+
+
+        left_action_items: [['chevron-left', lambda x: app.show_dialog()]]
+        right_action_items:[['google-translate',lambda x:root.parent.parent.translation()]]
+        specific_text_color: hex('#000000')
+
+
+
+
+
+
+
+
+
+
+
+    MDTextField:
+        color_mode: 'custom'
+        id: kelas
+
+
+        hint_text: "Class(Not Required)"
+
+        helper_text_mode: "on_focus"
+
+
+
+
+
+
+        width:400
+        size_hint_x:None
+
+        pos_hint:{'center_x': 0.3,'center_y':0.8}
+
+
+    MDTextField:
+        id:username
+        color_mode: 'custom'
+
+        hint_text: "Name(Not Required)"
+
+        helper_text_mode: "on_focus"
+
+
+        width:400
+        size_hint_x:None
+
+        pos_hint:{'center_x': 0.3,'center_y':0.85}
+
+
+
+    MDTextFieldRect:
+
+        id:isi
+        size_hint :0.9,0.4
+        hint_text:"What Do U Wanna Write?"
+        pos_hint:{'center_x': 0.5,'center_y':0.5}
+
+        multiline:True
+    Spinner:
+        id:spinn
+        size_hint_x : None
+        width:250
+        height:50
+        size_hint_y:None
+        text: 'Font'
+
+
+        pos_hint:{'center_x': 0.77,'center_y':0.8}
+        values: '1', '2', '3'
+
+
+
+
+
+
+
+
+    Spinner:
+        id:spinn1
+        size_hint_x : None
+        width:250
+        height:50
+        size_hint_y:None
+        text: 'Paper'
+
+
+
+
+
+
+
+        values: '1', '2', '3','4','5'
+
+        pos_hint:{'center_x': 0.77,'center_y':0.85}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    MDFloatingActionButtonSpeedDial:
+        callback: app.call
+
+        data:
+            {'typewriter': 'Writing',
+            'google-photos': 'See Images',
+            'notebook': 'Grammar Check',
+            'camera':'Handwriting Detection',
+            'chart-bar':'See Usage',
+            'truck-delivery':'Check Ongkir',
+            'ship-wheel':"Cek Resi"
+
+            }
+        root_button_anim: True
+        hint_animation: True
+
+        bg_hint_color: rgba("#ffb005")
+        pos_hint:{'center_x':0.5,'center_y':0.2}
+
+
+
+

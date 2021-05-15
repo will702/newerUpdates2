@@ -1,0 +1,25 @@
+<TooltipMDIconButton@MDIconButton+MDTooltip>
+
+<Screen2>:
+
+    name: 'screen2'
+    image1:image1
+    Image:
+
+        id:image1
+
+        source:''
+        allow_stretch :True
+        keep_ratio:False
+    TooltipMDIconButton:
+        tooltip_text:'Back'
+        icon: 'arrow-left'
+        theme_text_color:'Custom'
+        text_color: app.theme_cls.primary_color
+        md_bg_color:[35/255,59/255,54/255,1]
+        on_release:
+            root.go_back()
+
+        pos_hint: {'center_x': 0.1,'center_y':0.05}
+
+

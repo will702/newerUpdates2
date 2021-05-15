@@ -1,0 +1,41 @@
+<TypeToWriteScreen>:
+    #:import utils kivy.utils
+
+    background: ""
+    canvas.before:
+
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source:root.background
+
+    ScreenManager:
+        id: screen_manager
+        Screen1:
+            id:screen1
+            name: "screen1"
+        Screen2:
+            id:screen2
+            name: "screen2"
+        CameraScreen:
+            id:camerascreen
+            name:'camerascreen'
+        AddScreen:
+            id:addscreen
+            name:'addscreen'
+        FriendScreen:
+            id:friendscreen
+            name:'friendscreen'
+        EditScreen:
+            id:editscreen
+            name:'editscreen'
+        Piechart:
+            id:piechart
+            name:'piechart'
+        OngkirScreen:
+            id:ongkirscreen
+            name:'ongkirscreen'
+
+
+
+
